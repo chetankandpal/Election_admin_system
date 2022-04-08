@@ -1,9 +1,6 @@
 package io.application.candidate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Candidate {
@@ -11,13 +8,15 @@ public class Candidate {
     @Id
     private String cId;
     private String name;
-    private Integer votes;
+    @Column(name="votes")
+    private Integer votes=0;
 
 
     public Candidate(){
 
 
     }
+
     public Candidate(String cId, String name, Integer votes) {
         super();
         this.cId = cId;

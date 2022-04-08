@@ -14,4 +14,9 @@ public class VoterService {
         voterRepository.save(voter);
     }
 
+
+    public Iterable<Voter> getVoterDetails(){
+       return voterRepository.findAll();
+    }
+
 }

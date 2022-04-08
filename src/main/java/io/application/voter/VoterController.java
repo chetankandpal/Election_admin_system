@@ -1,10 +1,11 @@
 package io.application.voter;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+
+@CrossOrigin("http://localhost:3000/")
+@RestController
 public class VoterController {
 
 
@@ -12,8 +13,12 @@ public class VoterController {
     private VoterService voterService;
 
     @RequestMapping(method = RequestMethod.POST,value="/voter")
-    public void addCandidate(@RequestBody Voter voter){
+    public void addVoter(@RequestBody Voter voter){
         voterService.addVoter(voter);
     }
 
+    @RequestMapping("/voter")
+    public Iterable<Voter> getVoterDetails(){
+        return voterService.getVoterDetails();
+    }
 }

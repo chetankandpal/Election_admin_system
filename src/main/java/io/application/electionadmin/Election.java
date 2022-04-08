@@ -12,10 +12,10 @@ public class Election {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer eId;
-    private String election_name;
+    private String electionname;
     private Date stime;
     private Date etime;
-    private Integer voters_count;
+    private Integer voterscount;
 
    public Election(){
 
@@ -24,19 +24,19 @@ public class Election {
     public Election(String election_name, Integer eId, Date stime, Date etime, Integer voters_count) {
 
        super();
-       this.election_name = election_name;
+       this.electionname = election_name;
         this.eId = eId;
         this.stime = stime;
         this.etime = etime;
-        this.voters_count = voters_count;
+        this.voterscount = voters_count;
     }
 
-    public String getElection_name() {
-        return election_name;
+    public String getElectionname() {
+        return electionname;
     }
 
-    public void setElection_name(String election_name) {
-        this.election_name = election_name;
+    public void setElectionname(String election_name) {
+        this.electionname = election_name;
     }
 
     public Integer geteId() {
@@ -47,27 +47,27 @@ public class Election {
         this.eId = eId;
     }
 
-    public Date getStime() {
-        return stime;
+    public long getStime() {
+        return stime.getTime();
     }
 
     public void setStime(Date stime) {
         this.stime = stime;
     }
 
-    public Date getEtime() {
-        return etime;
+    public long getEtime() {
+        return etime.getTime();
     }
 
     public void setEtime(Date etime) {
         this.etime = etime;
     }
 
-    public Integer getVoters_count() {
-        return voters_count;
+    public Integer getVoterscount() {
+        return voterscount;
     }
 
-    public void setVoters_count(Integer voters_count) {
-        this.voters_count = voters_count;
+    public void setVoterscount(Integer voters_count) {
+        this.voterscount = voters_count;
     }
 }

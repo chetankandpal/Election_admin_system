@@ -15,30 +15,19 @@ public class Voter {
     private String address;
     private String email;
     private String voted_for;
-    private String voter_image;
-    private boolean voted;
 
-    public boolean isVoted() {
-        return voted;
-    }
-
-    public void setVoted(boolean voted) {
-        this.voted = voted;
-    }
 
     public Voter(){
 
     }
 
-    public Voter(String id, String name, String address, String email, String voted_for, String voter_image,Boolean voted) {
+    public Voter(String id, String name, String address, String email, String voted_for,Boolean voted) {
         super();
         this.Id = id;
         this.name = name;
         this.address = address;
         this.email = email;
         this.voted_for = voted_for;
-        this.voter_image = voter_image;
-        this.voted=voted;
     }
 
 
@@ -83,11 +72,4 @@ public class Voter {
         this.voted_for = voted_for;
     }
 
-    public String getVoter_image() {
-        return voter_image;
-    }
-
-    public void setVoter_image(String voter_image) {
-        this.voter_image = voter_image;
-    }
 }
