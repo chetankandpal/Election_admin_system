@@ -14,6 +14,7 @@ public class VoterController {
 
     @RequestMapping(method = RequestMethod.POST,value="/voter")
     public void addVoter(@RequestBody Voter voter){
+        System.out.println(voter.getvId()+" "+voter.getName());
         voterService.addVoter(voter);
     }
 

@@ -1,7 +1,7 @@
 package io.application.voter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.sql.Blob;
@@ -10,7 +10,7 @@ import java.sql.Blob;
 public class Voter {
 
     @Id
-    private String Id;
+    private String vId;
     private String name;
     private String address;
     private String email;
@@ -21,23 +21,21 @@ public class Voter {
 
     }
 
-    public Voter(String id, String name, String address, String email, String voted_for,Boolean voted) {
+    public Voter(String vId, String name, String address, String email, String voted_for) {
         super();
-        this.Id = id;
+        this.vId = vId;
         this.name = name;
         this.address = address;
         this.email = email;
         this.voted_for = voted_for;
     }
 
-
-
-    public String getId() {
-        return Id;
+    public String getvId() {
+        return vId;
     }
 
-    public void setId(String id) {
-        Id = id;
+    public void setvId(String vId) {
+        this.vId = vId;
     }
 
     public String getName() {
@@ -71,5 +69,4 @@ public class Voter {
     public void setVoted_for(String voted_for) {
         this.voted_for = voted_for;
     }
-
 }
