@@ -14,7 +14,9 @@ public class Voter {
     private String name;
     private String address;
     private String email;
-    private String voted_for;
+
+    @Column(name="voted_for")
+    private String voted_for="";
 
 
     public Voter(){
